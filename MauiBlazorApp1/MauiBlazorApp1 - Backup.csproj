@@ -1,0 +1,238 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>MauiBlazorApp1</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<EnableDefaultCssItems>false</EnableDefaultCssItems>
+
+		<!-- Display name -->
+		<ApplicationTitle>MauiBlazorApp1</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.mauiblazorapp1</ApplicationId>
+		<ApplicationIdGuid>EBB4EEA9-39DC-4CDD-A69B-AE9001BD7DB2</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<Configurations>Debug;Release;DebugDEV;ReleaseDEV</Configurations>
+		<CodesignKey>iPhone Developer</CodesignKey>
+	</PropertyGroup>
+
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='DebugDEV|net6.0-android|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='ReleaseDEV|net6.0-android|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	  <MtouchUseLlvm>True</MtouchUseLlvm>
+	  <MtouchProfiling>False</MtouchProfiling>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	  <MtouchProfiling>False</MtouchProfiling>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='DebugDEV|net6.0-ios|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	  <MtouchProfiling>False</MtouchProfiling>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='ReleaseDEV|net6.0-ios|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	  <MtouchProfiling>False</MtouchProfiling>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-maccatalyst|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-maccatalyst|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='DebugDEV|net6.0-maccatalyst|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='ReleaseDEV|net6.0-maccatalyst|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows10.0.19041.0|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows10.0.19041.0|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='DebugDEV|net6.0-windows10.0.19041.0|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='ReleaseDEV|net6.0-windows10.0.19041.0|AnyCPU'">
+	  <MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	  <WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#FFFFFF" />
+
+		<!-- Splash Screen -->
+	
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	
+</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Pages\BarsAndText - Copy.razor.css" />
+	  <None Remove="Pages\BarsAndText.razor.css" />
+	  <None Remove="Pages\BarsAndText\BarsAndText.scss" />
+	  <None Remove="Resources\Splash\intactsplash.svg" />
+	  <None Remove="Platforms\iOS\Renderers\" />
+	  <None Remove="Platforms\MacCatalyst\Renderers\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiSplashScreen Include="Resources\Splash\intactsplash.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Remove="compilerconfig.json" />
+	  <Content Remove="wwwroot\intactsplash.png" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Pages\BarsAndText\BarsAndText.scss" />
+	  <Content Include="Pages\PhotoPage\PhotoPageStyle.scss" />
+	  <MauiAsset Include="Raw\indexOldMain.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="compilerconfig.json" />
+	  <None Include="wwwroot\MainAppScript.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
+	  <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0-preview.6.22324.4" />
+	  <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.8.0-beta">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Smart.Blazor" Version="14.2.18" />
+	  <PackageReference Include="Syncfusion.Blazor.Buttons" Version="20.2.0.40" />
+	  <PackageReference Include="Syncfusion.Blazor.Calendars" Version="20.2.0.40" />
+	  <PackageReference Include="Syncfusion.Blazor.DropDowns" Version="20.2.0.40" />
+	  <PackageReference Include="Syncfusion.Blazor.Grid" Version="20.2.0.40" />
+	  <PackageReference Include="Syncfusion.Blazor.Inputs" Version="20.2.0.40" />
+	  <PackageReference Include="Syncfusion.Blazor.Navigations" Version="20.2.0.40" />
+	  <PackageReference Include="Syncfusion.Blazor.PdfViewerServer.Windows" Version="20.2.0.40" />
+	  <PackageReference Include="Syncfusion.Blazor.Popups" Version="20.2.0.40" />
+	  <PackageReference Include="Syncfusion.Blazor.Themes" Version="20.2.0.40" />
+	
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="NativePages\ImagePage.xaml.cs">
+	    <DependentUpon>ImagePage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="NativePages\ErrorMessagePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\InfoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\ImagePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\QrCodeReader.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Resources\Splash\intactsplash.svg" Color="#FFFFFF" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\fonts\" />
+	  <Folder Include="Platforms\iOS\Renderers\" />
+	  <Folder Include="Platforms\MacCatalyst\Renderers\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="wwwroot\data\TestPDF1.pdf">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+	  <Exec Command="if $(ConfigurationName) ==  Debug (&#xD;&#xA;copy $(projectdir)\Platforms\Android\_ManifestFiles\AndroidManifestPROD.xml $(projectdir)\Platforms\Android\AndroidManifest.xml /Y&#xD;&#xA;copy $(projectdir)\Platforms\iOS\_ManifestFiles\InfoPROD.plist $(projectdir)\Platforms\iOS\Info.plist /Y&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;if $(ConfigurationName) ==  Release (&#xD;&#xA;copy $(projectdir)\Platforms\Android\_ManifestFiles\AndroidManifestPROD.xml $(projectdir)\Platforms\Android\AndroidManifest.xml /Y&#xD;&#xA;copy $(projectdir)\Platforms\iOS\_ManifestFiles\InfoPROD.plist $(projectdir)\Platforms\iOS\Info.plist /Y&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;if $(ConfigurationName) ==  ReleaseDEV (&#xD;&#xA;copy $(projectdir)\Platforms\Android\_ManifestFiles\AndroidManifestDEV.xml $(projectdir)\Platforms\Android\AndroidManifest.xml /Y&#xD;&#xA;copy $(projectdir)\Platforms\iOS\_ManifestFiles\InfoDev.plist $(projectdir)\Platforms\iOS\Info.plist /Y&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;if $(ConfigurationName) ==  DebugDEV (&#xD;&#xA;copy $(projectdir)\Platforms\Android\_ManifestFiles\AndroidManifestDEV.xml $(projectdir)\Platforms\Android\AndroidManifest.xml /Y&#xD;&#xA;copy $(projectdir)\Platforms\iOS\_ManifestFiles\InfoDev.plist $(projectdir)\Platforms\iOS\Info.plist /Y&#xD;&#xA;)" />
+	</Target>
+
+</Project>

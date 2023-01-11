@@ -1,0 +1,143 @@
+﻿$primary: #306176;
+$primary-variant: #244959;
+$secondary: #DCCC67;
+$secondary-variant: #CAB637;
+$on-primary-disabled: #FFFFFF61;
+$on-primary-medium-emphasis: #FFFFFFBD;
+$on-primary-high-emphasis: #FFFFFF;
+$outline: #0000001F;
+$on-surface-disabled: #00000061;
+$on-surface-medium-emphasis: #00000099;
+$on-surface-high-emphasis: #000000DE;
+$alert-success: #45A83E;
+$alert-success-banner-background: #E8F5E7;
+$alert-success-list-item-background: #45A83E1F;
+$alert-error: #A2001D;
+$alert-error-banner-background: #F4E0E3;
+$alert-error-list-item-background: #A2001D1F;
+$alert-info: #1864A2;
+$alert-info-banner-background: #E3ECF4;
+$alert-info-list-item-background: #1864A21F;
+$alert-warning: #DDC52A;
+$alert-warning-banner-background: #FBF8E5;
+$alert-warning-list-item-background: #DDC52A1F;
+$unnamed-color-212121: #212121;
+$unnamed-color-ffffff99: #FFFFFF99;
+$white: #FFFFFF;
+$black: #000000DE;
+
+@font-face {
+    font-family: 'Roboto';
+    src: URL('../Resources/Fonts/Roboto-Medium.ttf') format('truetype');
+}
+
+.body {
+    font-family: var(--unnamed-font-family-roboto);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-16);
+    line-height: var(--unnamed-line-spacing-19);
+    letter-spacing: var(--unnamed-character-spacing-0-5);
+    color: var($on-surface-high-emphasis);
+}
+
+.title {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-roboto);
+    letter-spacing: var(--unnamed-character-spacing-0-15);
+    color: var($black);
+    text-align: left;
+    font: normal normal medium 20px/24px Roboto;
+    letter-spacing: 0.15px;
+    opacity: 1;
+}
+
+.headline {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-roboto);
+    letter-spacing: var(--unnamed-character-spacing-0-15);
+    color: var($black);
+    text-align: left;
+    font: normal normal normal 20px/24px Roboto;
+    letter-spacing: 0.15px;
+    opacity: 1;
+}
+
+.subtitle1 {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-roboto);
+    letter-spacing: var(--unnamed-character-spacing-0-14);
+    color: var($black);
+    text-align: left;
+    font: normal normal normal 16px/24px Roboto;
+    letter-spacing: 0.14px;
+    opacity: 1;
+}
+
+.subtitle2 {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-roboto);
+    letter-spacing: var(--unnamed-character-spacing-0-1);
+    color: var($black);
+    text-align: left;
+    font: normal normal medium 14px/24px Roboto;
+    letter-spacing: 0.1px;
+    opacity: 1;
+}
+
+.subheader {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-16) var(--unnamed-font-family-roboto);
+    color: var($black);
+    text-align: left;
+    font: normal normal medium 14px/16px Roboto;
+    letter-spacing: 1.06px;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.body1 {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-roboto);
+    letter-spacing: var(--unnamed-character-spacing-0-5);
+    color: var($black);
+    text-align: left;
+    font: normal normal normal 16px/19px Roboto;
+    letter-spacing: 0.5px;
+    opacity: 1;
+}
+
+.body2 {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-roboto);
+    letter-spacing: var(--unnamed-character-spacing-0-25);
+    color: var($black);
+    text-align: left;
+    font: normal normal normal 14px/20px Roboto;
+    letter-spacing: 0.25px;
+    opacity: 1;
+}
+
+.button {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-16) var(--unnamed-font-family-roboto);
+    letter-spacing: var(--unnamed-character-spacing-1-25);
+    color: var($black);
+    text-align: left;
+    font: normal normal medium 14px/16px Roboto;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.caption {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-12)/var(--unnamed-line-spacing-16) var(--unnamed-font-family-roboto);
+    letter-spacing: var(--unnamed-character-spacing-0-4);
+    text-align: right;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0.4px;
+    color: $on-surface-medium-emphasis;
+    opacity: 1;
+}
+
+.error-text {
+    color: $alert-error;
+    opacity: 1;
+}
+
+.error-background {
+    background: $alert-error-banner-background 0% 0% no-repeat padding-box;
+
+}

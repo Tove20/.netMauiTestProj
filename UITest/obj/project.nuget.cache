@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "oGBDgTntlkZKbDspNpNg58wmEMccSjolg1zn3kxsh+mw4ymzl4px6u54sdG0uafFg/QzURvzMmXeD1KW5zzs4A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tonja\\Downloads\\wetransfer_mauiblazorapp1_2023-01-11_1517\\MauiBlazorApp1\\UITest\\UITest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tonja\\.nuget\\packages\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
+    "C:\\Users\\Tonja\\.nuget\\packages\\nunit3testadapter\\4.2.1\\nunit3testadapter.4.2.1.nupkg.sha512",
+    "C:\\Users\\Tonja\\.nuget\\packages\\xamarin.uitest\\3.2.8\\xamarin.uitest.3.2.8.nupkg.sha512"
+  ],
+  "logs": []
+}

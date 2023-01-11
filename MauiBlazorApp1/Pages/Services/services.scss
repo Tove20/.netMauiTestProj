@@ -1,0 +1,160 @@
+﻿@import "../../Styles/app.css";
+@import "../../Styles/ColorsAndFonts.scss";
+
+a, a:hover, .highcontrast #dialog a, .highcontrast #dialog a:hover {
+    color: #244959;
+    text-decoration: none;
+}
+
+
+.material-icons md-24{
+    display: inline-block;
+}
+.comment1 {
+    display: inline-block;
+    width: 98%;
+    overflow: hidden;
+    resize: both;
+    min-height: 20px;
+    line-height: 20px;
+}
+.comment2 {
+    display: inline-block;
+    width: 98%;
+    overflow: hidden;
+    resize: both;
+    min-height: 20px;
+    line-height: 20px;
+}
+/*    .e-upload:before {
+        content: '\e769';
+        font-family: "e-icons";
+    }
+ 
+    .e-upload {
+        width: auto;
+    }*/
+/*    .e-upload2:before {
+        content: '\e769';
+        font-family: "e-icons";
+    }
+
+    .e-upload2 {
+        width: auto;
+     } */
+.fabric #target .e-dialog {
+    height: 306px;
+}
+
+    .material #target .e-dialog {
+        height: 270px;
+    }
+
+    .bootstrap4 #target .e-dialog {
+        height: 305px;
+    }
+
+    #target .e-dialog {
+        height: 270px;
+    }
+
+    #target {
+        height: 500px;
+    }
+
+    .checkbox-control {
+        margin: 12% 0 12% 40%;
+    }
+
+    .control-section .row {
+        margin: 20px 0;
+    }
+
+    .e-btn-group.e-btn-group {
+        width: 98%;
+        box-shadow:none;
+        .e-control.e-btn.e-lib.sf-outline-button {
+            border-color: lightgray;
+            width: 98%;
+            height: 45px;
+        }
+    }
+
+    .e-input:not(:valid), .e-input:valid, .e-float-input.e-control-wrapper input:not(:valid), .e-float-input.e-control-wrapper input:valid, .e-float-input input:not(:valid), .e-float-input input:valid, .e-input-group input:not(:valid), .e-input-group input:valid, .e-input-group.e-control-wrapper input:not(:valid), .e-input-group.e-control-wrapper input:valid, .e-float-input.e-control-wrapper textarea:not(:valid), .e-float-input.e-control-wrapper textarea:valid, .e-float-input textarea:not(:valid), .e-float-input textarea:valid, .e-input-group.e-control-wrapper textarea:not(:valid), .e-input-group.e-control-wrapper textarea:valid, .e-input-group textarea:not(:valid), .e-input-group textarea:valid {
+        overflow: hidden;
+    }
+    .control-area {
+        padding-bottom: 20px;
+    }
+    .e-input-focus input.label.e-float-text {
+        color: $primary !important;  
+        overflow:hidden;
+    }
+    .e-float-text.e-label-top {
+        color: $primary !important;
+    }
+    .e-float-line::after {
+        background: $primary !important;
+    }
+    .e-float-line::before {
+        background: $primary !important;
+    }
+ 
+    .label {
+        padding: 10px 24px 10px 0;
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        color: #244959;
+        background-color: transparent;
+    }
+
+    .e-switch-wrapper {
+        display: inline-block;
+        height: 12px;
+        position: relative;
+        user-select: none;
+        width: 34px;
+        float: right;
+
+        .e-switch-handle.e-switch-active {
+            background-color: $primary!important;
+        }
+
+        .e-switch-wrapper.e-switch-handle.e-switch-active {
+            background-color: $primary !important;
+        }
+    }
+    .e-switch-inner.e-switch-active > span.e-switch-on {
+        background-color: $primary !important;
+    }
+    .e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text, .e-float-input.e-control-wrapper:not(.e-error) input ~ label.e-label-top.e-float-text {
+        font-size: 10px;
+    }
+
+    .e-checkbox-wrapper .e-frame.e-check, .e-css.e-checkbox-wrapper .e-frame.e-check {
+        background-color: $primary !important;
+
+        .hr {
+            height: 5px;
+            border-width: 0;
+            color: gray;
+        }
+    }
+
+
+    .e-round {
+        right: 50px;
+        bottom: 80px;
+        position: absolute;
+    }
+
+    .e-control.e-btn.e-lib.e-round.e-primary.e-icon-btn {
+        background-color: $secondary-variant;
+    }
+
+    .e-plus-icon::before {
+        content: '\e823';
+        color: black;
+    }
+

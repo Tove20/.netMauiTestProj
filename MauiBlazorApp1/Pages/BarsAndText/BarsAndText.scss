@@ -1,0 +1,57 @@
+﻿@import "../../Styles/app.css";
+@charset "UTF-8";
+.container-section {
+  margin: 25px;
+}
+
+.container-section-datetime {
+   padding-bottom: 40px;
+   margin: 25px
+}
+/*Use the following CSS to customize the focusing color of input element.*/
+.e-ddl.e-input-group.e-control-wrapper.e-input-focus::before, .e-ddl.e-input-group.e-control-wrapper.e-input-focus::after {
+    background: #306176;
+}
+
+.e-input-group:not(.e-float-icon-left):not(.e-float-input)::before, .e-input-group:not(.e-float-icon-left):not(.e-float-input)::after, .e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::before, .e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::after, .e-input-group.e-control-wrapper:not(.e-float-icon-left):not(.e-float-input)::before, .e-input-group.e-control-wrapper:not(.e-float-icon-left):not(.e-float-input)::after, .e-input-group.e-control-wrapper.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::before, .e-input-group.e-control-wrapper.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::after {
+    background: #306176 !important;
+}
+
+.e-input-group:not(.e-success):not(.e-warning):not(.e-error):not(.e-float-icon-left), .e-input-group.e-float-icon-left:not(.e-success):not(.e-warning):not(.e-error) .e-input-in-wrap, .e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error):not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-float-icon-left:not(.e-success):not(.e-warning):not(.e-error) .e-input-in-wrap, .e-float-input.e-float-icon-left:not(.e-success):not(.e-warning):not(.e-error) .e-input-in-wrap, .e-float-input.e-control-wrapper.e-float-icon-left:not(.e-success):not(.e-warning):not(.e-error) .e-input-in-wrap {
+    border-color: rgba(0, 0, 0, 0.42);
+    width: 328px !important;
+}
+
+/* To specify background color, color, and border */
+.e-calendar .e-content td:hover span.e-day, .e-calendar .e-content td:focus span.e-day, .e-bigger.e-small .e-calendar .e-content td:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td:focus span.e-day {
+    background-color: #306176 !important;
+    border: 1px solid #306176 !important;
+    color: #FFFFFF !important;
+}
+
+.e-calendar .e-content td.e-selected.e-focused-date span.e-day {
+    border: 1px solid #306176 !important;
+    background-color: white !important;
+    color: #306176 !important;
+}
+
+.e-input-group .e-input-group-icon:last-child, .e-input-group.e-control-wrapper .e-input-group-icon:last-child {
+    font-size: 12px !important;
+    color: #306176 !important;
+}
+
+.e-calendar .e-btn.e-today.e-flat.e-primary, .e-calendar .e-css.e-btn.e-today.e-flat.e-primary {
+    color: #306176 !important;
+}
+
+.e-calendar .e-content tr.e-month-hide,
+.e-calendar .e-content td.e-other-month > span.e-day {
+    display: block !important;
+}
+
+.e-calendar .e-content td.e-month-hide,
+.e-calendar .e-content td.e-other-month {
+    pointer-events: auto !important;
+    touch-action: auto !important;
+}
+

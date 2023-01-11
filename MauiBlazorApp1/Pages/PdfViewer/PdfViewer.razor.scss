@@ -1,0 +1,10 @@
+﻿@import "../../Styles/app.css";
+.e-pdfviewer .e-pv-icon::before {
+    font-size: 20px;
+}
+
+.e-pv-toolbar.e-toolbar.e-toolbar .e-toolbar-item .e-tbar-btn.e-btn .e-icons.e-btn-icon, .e-pv-annotation-toolbar.e-toolbar.e-toolbar .e-toolbar-item .e-tbar-btn.e-btn .e-icons.e-btn-icon {
+    line-height: 26px;
+    min-height: 26px;
+    font-size: 20px;
+}

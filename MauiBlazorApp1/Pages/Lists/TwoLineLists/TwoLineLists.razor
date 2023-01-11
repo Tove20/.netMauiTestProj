@@ -1,0 +1,107 @@
+﻿@page "/twolists"
+@using MauiBlazorApp1.Pages.Lists.TwoLineLists
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Navigations
+@inject IJSRuntime JsRuntime
+@inject NavigationManager UriHelper
+
+
+<h3>Lists</h3>
+
+ <button class="btn btn-primary" id="btnCounter" @onclick="GoToOneLinePage">One Line Page</button>
+ <button class="btn btn-primary" id="btnCounter" @onclick="GoToTwoLinePage">Two Line Page</button>
+ <button class="btn btn-primary" id="btnCounter" @onclick="GoToAudits">Audits</button>
+
+@*Standard*@
+ <div class="list-container">
+     <div class="tex-container">
+        <label class="subtitle1 no-margin"> Water and Power Corp </label>
+        <label class="body2 no-margin"> Initial: ISO 14001:2015 </label>
+        <div class="line no-margin"> </div>
+     </div>
+ </div>
+
+@*leading icon *@
+<div class="list-container">
+    <div class="standard-twoline">
+        <SfIcon Name="IconName.ArrowLeft" Size="IconSize.Large" class="single-line-icon"></SfIcon>
+        <div class="leading-icon">
+        <p class="subtitle1 subtitle-high-emphasis-twoline">Subtitle 1 / High Emphasis
+        <p class="body2 body-medium-emphasis-twoline">Body 2 / Medium Emphasis</p>
+        <div class="line"> </div>
+        </p>
+        </div>
+    </div>
+</div>
+
+@*trailling icon *@
+<div class="list-container">
+    <div class="with-trailling-icon">
+        <p class="subtitle1 subtitle-high-emphasis-twoline">Subtitle 1 / High Emphasis
+        <p class="body2 body-medium-emphasis-twoline">Body 2 / Medium Emphasis</p>
+        </p>
+        <SfIcon Name="IconName.ChevronRight" Size="IconSize.Medium" class="trailling-icon"></SfIcon>
+        <div class="line"> </div>
+    </div>
+</div>
+
+@*two trailling icon *@
+<div class="list-container">
+    <div class="with-trailling-icon ">
+        <p class="subtitle1 subtitle-high-emphasis-twoline">Subtitle 1 / High Emphasis
+        <p class="body body-medium-emphasis-twoline">Body 2 / Medium Emphasis</p>
+        </p>
+        <SfIcon Name="IconName.ChevronRight" Size="IconSize.Medium" class="trailling-icon"></SfIcon>
+        <SfIcon Name="IconName.Menu" Size="IconSize.Medium" class="trailling-icon-two"></SfIcon>
+        <div class="line"> </div>
+    </div>
+</div>
+
+@*overline *@
+<div class="list-container">
+    <div class="standard-twoline">
+        <p class="overline">Overline / Disabled
+        <p class="body2 subtitle">Body 2 / Medium Emphasis</p>
+        </p>
+
+        <div class="line"> </div>
+    </div>
+</div>
+
+@*subline leading icon *@
+<div class="list-container">
+    <div class="standard-twoline">
+        <SfIcon Name="IconName.ArrowLeft" Size="IconSize.Large" class="single-line-icon"></SfIcon>
+        <div class="leading-icon">
+            <p class="subtitle-high-emphasis-twoline">Subtitle 1 / Medium Emphasis</p>
+            <p class="subline-small">Subline / Disabled
+            <div class="line"> </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+@*subline leading icon *@
+<div class="list-container">
+    <div class="standard-twoline">
+        <SfIcon Name="IconName.ArrowLeft" Size="IconSize.Large" class="single-line-icon"></SfIcon>
+        <div class="leading-icon">
+            <p class="subtitle1 subtitle-high-emphasis-twoline">Subtitle 1 / Medium Emphasis</p>
+            <p class="subline-small">
+                Subline / Disabled
+                <div class="line"> </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<SfContextMenu Target="#target" TValue="MenuItem">
+    <MenuItems>
+        <MenuItem Text="Cut"></MenuItem>
+        <MenuItem Text="Copy"></MenuItem>
+        <MenuItem Text="Paste"></MenuItem>
+    </MenuItems>
+</SfContextMenu>
+<SfIcon Name="IconName.ArrowLeft" Size="IconSize.Large" @onclick="OpenContextMenu"  class="single-line-icon"></SfIcon>

@@ -1,0 +1,65 @@
+﻿@page "/audits"
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor
+@inject NavigationManager UriHelper
+@using MauiBlazorApp1.Pages.Lists.Audits
+
+<h3>Lists</h3>
+
+ <button class="btn btn-primary" id="btnCounter" @onclick="GoToOneLinePage">One Line Page</button>
+ <button class="btn btn-primary" id="btnCounter" @onclick="GoToTwoLinePage">Two Line Page</button>
+ <button class="btn btn-primary" id="btnCounter" @onclick="GoToAudits">Audits</button>
+
+ <div class="list-container">
+     <div class="leading-icon-container">
+            <SfIcon Name="IconName.ArrowLeft" Size="IconSize.Large" ></SfIcon>
+     </div>
+     <div class="tex-container">
+      
+        <label class="overline no-margin"> AO-12466 </label>
+        <label class="subtitle1 no-margin"> Water and Power Corp </label>
+        <label class="body2 no-margin"> Initial: ISO 14001:2015 </label>
+
+        <div class="trailling-container">
+                <p class="caption"> 01/02/2022 </p>
+            <SfIcon Name="IconName.ChevronDownFill" Size="IconSize.Small"></SfIcon>
+        </div>
+        <div class="line no-margin"> </div>
+     </div>
+ </div>
+
+<div class="list-container">
+    <div class="leading-icon-container ">
+        <SfIcon Name="IconName.ArrowLeft" Size="IconSize.Large"></SfIcon>
+    </div>
+    <div class="tex-container">
+
+        <label class="overline no-margin disabled"> AO-12466 </label>
+        <label class="subtitle1 no-margin disabled"> Water and Power Corp </label>
+        <label class="body2 no-margin disabled"> Initial: ISO 14001:2015 </label>
+
+        <div class="trailling-container">
+            <p class="caption"> 01/02/2022 </p>
+            <SfIcon Name="IconName.ChevronDownFill" Size="IconSize.Small"></SfIcon>
+        </div>
+        <div class="line no-margin"> </div>
+    </div>
+</div>
+
+<div class="list-container">
+    <div class="leading-icon-container error-background error-icon">
+        <SfIcon Name="IconName.ArrowLeft" Size="IconSize.Large"></SfIcon>
+    </div>
+    <div class="tex-container error-background">
+
+        <label class="overline no-margin error-text"> AO-12466 </label>
+        <label class="subtitle1 no-margin error-text"> Water and Power Corp </label>
+        <label class="body2 no-margin"> Initial: ISO 14001:2015 </label>
+
+        <div class="trailling-container">
+            <p class="caption"> 01/02/2022 </p>
+            <SfIcon Name="IconName.ChevronDownFill" Size="IconSize.Small"></SfIcon>
+        </div>
+        <div class="line no-margin"> </div>
+    </div>
+</div>

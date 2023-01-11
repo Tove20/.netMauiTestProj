@@ -1,0 +1,133 @@
+﻿@import "../../Styles/app.css";
+.standard {
+  height: 3rem;
+  width: 25rem;
+  left: 4rem;
+  position: relative;
+}
+
+.with-leading-icon {
+  height: 3rem;
+  width: 25rem;
+  position: relative;
+}
+
+.with-trailling-icon {
+  height: 3rem;
+  width: 25rem;
+  display: grid;
+  left: 1rem;
+  position: absolute;
+  position: relative;
+}
+
+.with-avatar {
+  height: 3rem;
+  width: 25rem;
+  display: grid;
+  left: 1rem;
+}
+
+p.subtitle-high-emphasis {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-roboto);
+  letter-spacing: var(--unnamed-character-spacing-0-14);
+  color: var(--on-surface-high-emphasis);
+  text-align: left;
+  font: normal normal normal 16px/24px Roboto;
+  letter-spacing: 0.14px;
+  color: #000000de;
+  opacity: 1;
+  border-bottom: 1px solid #0000001f;
+  /* justify-content: center; */
+  bottom: 0;
+  right: 0;
+  /* display: inline-flex; */
+  padding: 0.75rem;
+}
+
+.no-divider {
+  border-bottom: 0px solid transparent !important;
+}
+
+.single-line-icon {
+  float: left;
+  padding: 0.75rem;
+}
+
+.leading-icon {
+  float: left;
+  width: calc(100% - 3rem);
+  color: #00000099;
+}
+
+.trailling-icon {
+  float: left;
+  padding: 0.75rem;
+  display: inline-grid;
+  position: fixed;
+  left: 23rem;
+  padding-top: 1rem;
+  color: #00000099;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.avatar-icon {
+  left: 29rem;
+}
+
+.lists-container {
+  margin: 1rem !important;
+}
+
+
+.new-item {
+  margin-top: 3rem;
+  display: block;
+}
+
+.with-checkbox {
+  float: left;
+  padding: 0.75rem;
+  display: inline-grid;
+  position: fixed;
+  left: 26rem;
+  padding-top: 1rem;
+  color: #00000099;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.e-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.leading-avatar {
+  float: right;
+  width: calc(100% - 3rem);
+  color: #00000099;
+  position: absolute;
+  padding-left: 3rem;
+  width: 100%;
+  max-width: 26rem;
+}
+
+.leading-avatar-trailling-icon {
+  height: 3rem;
+  width: 25rem;
+  display: grid;
+  left: 1rem;
+  position: absolute;
+  position: relative;
+}
+
+.avatar-text {
+  padding-left: 0;
+}
+
+.avatar-item {
+  padding-left: 1rem;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22file:///C:/GitReposMobileApp/MobilePrototypes/MauiBlazorApp1/MauiBlazorApp1/Pages/Lists/Lists.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAS;AAET;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;;;AAEJ;EACI;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;;;AAKJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;AACA;EACA;EACA;AACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;;;AAGJ;EACI;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;;;AAGJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;;;AAIJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEJ;EACI;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI%22%7D */

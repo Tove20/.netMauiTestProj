@@ -1,0 +1,94 @@
+﻿@using Syncfusion.Blazor.Buttons
+@inject NavigationManager UriHelper
+
+
+<nav id="primary" class="top-row navbar navbar-expand-md " >
+
+        <SfIcon Name="IconName.ArrowLeft" @onclick="onToggleClick" Size="IconSize.Large" id="primary-icon" class="top-row-icon" ></SfIcon>
+    <a id="primary-text" class="top-row-text navbar-brand" href="">Title</a>
+        <button class="navbar-toggler @NavButtonCssClass" type="button" aria-controls="navbarCollapse"
+                aria-label="Toggle navigation" @onclick="ToggleNavMenu">
+        </button>
+
+
+</nav>
+<nav id="primary-second-bar" class=" top-row navbar navbar-expand-md " >
+
+       
+
+
+</nav>
+
+        <div class="bottom-navbar">
+                    <NavLink id="image-with-text" href="" Match="NavLinkMatch.All">
+                        <span id="bottom-bar-icon" class="oi oi-home" aria-hidden="true"></span> <p id="bottom-bar-text">Home</p>
+                    </NavLink>
+
+                    <NavLink id="image-with-text" href="barsandtext">
+                        <span id="bottom-bar-icon" class="oi oi-list-rich" aria-hidden="true"></span> <p id="bottom-bar-text">Bars and Text</p>
+                    </NavLink>
+                    <NavLink id="image-with-text" href="pdfviewer">
+                         <span id="bottom-bar-icon" class="oi oi-box" aria-hidden="true"></span> <p id="bottom-bar-text">PDF Viewer</p>
+                    </NavLink>
+                     <NavLink id="image-with-text" href="photo">
+                        <span id="bottom-bar-icon" class="oi oi-box" aria-hidden="true"></span> <p id="bottom-bar-text">Take photo</p>
+                    </NavLink>
+                     <NavLink id="image-with-text" href="syncfusionform1">
+                        <span id="bottom-bar-icon" class="oi oi-browser" aria-hidden="true"></span> <p id="bottom-bar-text">Syncfusion data form 1</p>
+                    </NavLink>
+                         <NavLink id="image-with-text" href="services">
+                        <span id="bottom-bar-icon" class="oi oi-box" ></span> <p id="bottom-bar-text">Services</p>
+                    </NavLink>
+                    <NavLink id="image-with-text" href="files">
+                        <span id="bottom-bar-icon" class="oi oi-account-login"></span> <p id="bottom-bar-text">Files</p>
+                    </NavLink>
+                    <NavLink id="image-with-text" href="contextmenu">
+                           <span id="bottom-bar-icon" class="oi oi-browser"></span> <p id="bottom-bar-text">Context Menu</p>
+                    </NavLink>
+                    <NavLink id="image-with-text" href="audits">
+                            <span id="bottom-bar-icon" class="oi oi-audio"></span> <p id="bottom-bar-text">Lists</p>
+                    </NavLink>
+                    <NavLink id="image-with-text" href="webbrowser">
+                            <span id="bottom-bar-icon" class="oi oi-audio"></span> <p id="bottom-bar-text">Web Browser</p>
+                    </NavLink>
+                    <NavLink id="image-with-text" href="longpress">
+                            <span id="bottom-bar-icon" class="oi oi-audio"></span> <p id="bottom-bar-text">Long Press</p>
+                    </NavLink>
+                   
+
+</div>
+  <div class="fixed-navigation">
+                        <div id=image-with-text-left>
+                        <a id="right-nav-item" class="oi oi-chevron-left" aria-hidden="true" href=""></a> <p id="bottom-bar-text">Previous</p>
+                        </div>
+                        <div id=image-with-text-right>
+                        <a id="left-nav-item" class="oi oi-chevron-right" aria-hidden="true" href=""></a>  <p id="bottom-bar-text">Next</p>
+                        </div>
+                   </div>
+@code {
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var targetUrl = "./scripts/ChangelColorScript.js";
+        await JSRuntime.InvokeVoidAsync("loadJs", targetUrl);
+        await JSRuntime.InvokeVoidAsync("hideSecondaryBar");
+
+    }
+
+
+    private bool collapseNavMenu = true;
+    private string? NavBarCssClass => collapseNavMenu ? null : "show";
+    private string? NavButtonCssClass => collapseNavMenu ? "collapsed" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private void onToggleClick()
+    {
+        UriHelper.NavigateTo("/services");
+    }
+}

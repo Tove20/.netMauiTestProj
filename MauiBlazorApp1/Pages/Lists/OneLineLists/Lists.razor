@@ -1,0 +1,86 @@
+﻿@page "/lists"
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor
+@inject NavigationManager UriHelper
+@using MauiBlazorApp1.Pages.Lists.OneLineLists
+<h3>Lists</h3>
+
+ <button class="btn btn-primary" id="btnCounter" @onclick="GoToOneLinePage">One Line Page</button>
+ <button class="btn btn-primary" id="btnCounter" @onclick="GoToTwoLinePage">Two Line Page</button>
+ <button class="btn btn-primary" id="btnCounter" @onclick="GoToAudits">Audits</button>
+
+@*Standard*@
+<div class="new-item">
+<div class="standard">
+    <p class="subtitle-high-emphasis">Subtitle 1 / High Emphasis</p>
+</div>
+</div>
+
+@*with leading Icon*@
+<div class="new-item">
+    <div class="with-leading-icon lists-container">
+    <SfIcon Name="IconName.ArrowLeft" Size="IconSize.Large" class="single-line-icon"></SfIcon>
+    <div class="leading-icon">
+        <p class="subtitle-high-emphasis">Subtitle 1 / High Emphasis</p>
+    </div>
+</div>
+</div>
+
+@*with trailling Icon*@
+<div class="new-item">
+        <div class="with-trailling-icon lists-container">
+        <p class="subtitle-high-emphasis">Subtitle 1 / High Emphasis</p>
+        <SfIcon Name="IconName.ChevronRight" Size="IconSize.Medium" class="trailling-icon"></SfIcon>
+    </div>
+   
+</div>
+
+@*with trailling Icon and caption*@
+<div class="new-item">
+        <div class="with-trailling-icon lists-container">
+        <p class="subtitle-high-emphasis">Subtitle 1 / High Emphasis</p
+        <p class="caption">Caption</p>
+        <SfIcon Name="IconName.ChevronRight" Size="IconSize.Medium" class="trailling-icon"></SfIcon>
+    </div>
+
+</div>
+
+@*with selection*@
+<div class="new-item">
+        <div class="with-trailling-icon lists-container">
+        <p class="subtitle-high-emphasis">Subtitle 1 / High Emphasis></p>
+    	<SfCheckBox @bind-Checked="@isChecked" CssClass="with-checkbox" ></SfCheckBox>
+    </div>
+</div>
+
+@*with Avatar*@
+<div class="new-item">
+    <div class="with-avatar lists-container">
+    <div class="e-avatar e-avatar-small image single-line-icon"></div>
+    <div class="leading-avatar">
+        <p class="subtitle-high-emphasis avatar-text">Subtitle 1 / High Emphasis</p>
+    </div>
+</div>
+</div>
+
+@*with Avatar and trailling icon
+
+*@
+<div class="new-item avatar-item">
+    <div class="e-avatar e-avatar-small image single-line-icon"></div>
+    <div class="leading-avatar-trailling-icon ">
+        <p class="subtitle-high-emphasis avatar-text">Subtitle 1 / High Emphasis</p>
+         <SfIcon Name="IconName.ChevronRight" Size="IconSize.Medium" class="trailling-icon avatar-icon"></SfIcon>
+    </div>
+
+</div>
+
+@*no divider Icon*@
+<div class="new-item">
+    <div class="with-leading-icon lists-container">
+    <SfIcon Name="IconName.ArrowLeft" Size="IconSize.Large" class="single-line-icon"></SfIcon>
+    <div class="leading-icon">
+        <p class="subtitle-high-emphasis no-divider">Subtitle 1 / High Emphasis</p>
+    </div>
+</div>
+</div>

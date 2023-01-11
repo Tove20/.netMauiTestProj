@@ -1,0 +1,10 @@
+﻿@page "/pdfviewer"
+@using Syncfusion.Blazor.PdfViewerServer
+@using Syncfusion.Blazor.PdfViewer
+@using MauiBlazorApp1.Pages.PdfViewer
+
+<SfPdfViewerServer  DocumentPath="@DocumentPath" ToolbarSettings="@ToolbarSettings">
+    <PdfViewerEvents DocumentLoaded="@DocumentLoaded"></PdfViewerEvents>
+</SfPdfViewerServer>
+
+<ejs-pdfviewer id="pdfviewer" style="height:641px" enableToolbar="false" documentLoad="documentLoaded" pageChange="pageChanged"></ejs-pdfviewer>

@@ -1,0 +1,254 @@
+is_global = true
+build_property.TargetFramework = net6.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MauiBlazorApp1
+build_property.RootNamespace = MauiBlazorApp1
+build_property.ProjectDir = C:\Users\Tonja\Downloads\wetransfer_mauiblazorapp1_2023-01-11_1517\MauiBlazorApp1\MauiBlazorApp1\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Tonja\Downloads\wetransfer_mauiblazorapp1_2023-01-11_1517\MauiBlazorApp1\MauiBlazorApp1
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/NativePages/BarScanner.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.NativePages.BarScanner.xaml
+build_metadata.AdditionalFiles.TargetPath = NativePages\BarScanner.xaml
+build_metadata.AdditionalFiles.RelativePath = NativePages\BarScanner.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/NativePages/ErrorMessagePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.NativePages.ErrorMessagePage.xaml
+build_metadata.AdditionalFiles.TargetPath = NativePages\ErrorMessagePage.xaml
+build_metadata.AdditionalFiles.RelativePath = NativePages\ErrorMessagePage.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/NativePages/ImagePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.NativePages.ImagePage.xaml
+build_metadata.AdditionalFiles.TargetPath = NativePages\ImagePage.xaml
+build_metadata.AdditionalFiles.RelativePath = NativePages\ImagePage.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/NativePages/InfoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.NativePages.InfoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = NativePages\InfoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = NativePages\InfoPage.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/NativePages/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.NativePages.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = NativePages\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = NativePages\MainPage.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/NativePages/OpenIdSample.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.NativePages.OpenIdSample.xaml
+build_metadata.AdditionalFiles.TargetPath = NativePages\OpenIdSample.xaml
+build_metadata.AdditionalFiles.RelativePath = NativePages\OpenIdSample.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/NativePages/QrCodeReader.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.NativePages.QrCodeReader.xaml
+build_metadata.AdditionalFiles.TargetPath = NativePages\QrCodeReader.xaml
+build_metadata.AdditionalFiles.RelativePath = NativePages\QrCodeReader.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/NativePages/SwipePages/SwipePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.NativePages.SwipePages.SwipePage.xaml
+build_metadata.AdditionalFiles.TargetPath = NativePages\SwipePages\SwipePage.xaml
+build_metadata.AdditionalFiles.RelativePath = NativePages\SwipePages\SwipePage.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/NativePages/SwipePages/SwipePage2.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.NativePages.SwipePages.SwipePage2.xaml
+build_metadata.AdditionalFiles.TargetPath = NativePages\SwipePages\SwipePage2.xaml
+build_metadata.AdditionalFiles.RelativePath = NativePages\SwipePages\SwipePage2.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/NativePages/SwipePages/SwipePage3.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiBlazorApp1.NativePages.SwipePages.SwipePage3.xaml
+build_metadata.AdditionalFiles.TargetPath = NativePages\SwipePages\SwipePage3.xaml
+build_metadata.AdditionalFiles.RelativePath = NativePages\SwipePages\SwipePage3.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Main.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = TWFpbi5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/BarCode/BarCode.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmFyQ29kZVxCYXJDb2RlLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/BarsAndText/BarsAndText.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmFyc0FuZFRleHRcQmFyc0FuZFRleHQucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/Blank/Blank.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmxhbmtcQmxhbmsucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/Cards/Cards.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZHNcQ2FyZHMucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/ContextMenu/ContextMenu.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGV4dE1lbnVcQ29udGV4dE1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/Counter.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/Files/Files.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsZXNcRmlsZXMucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/Index.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/Lists/Audits/Audits.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdHNcQXVkaXRzXEF1ZGl0cy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/Lists/OneLineLists/Lists.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdHNcT25lTGluZUxpc3RzXExpc3RzLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/Lists/TwoLineLists/TwoLineLists.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdHNcVHdvTGluZUxpc3RzXFR3b0xpbmVMaXN0cy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/LongPress/LongPress.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9uZ1ByZXNzXExvbmdQcmVzcy5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/PhotoPage/PhotoPage.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhvdG9QYWdlXFBob3RvUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/Services/Services.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNcU2VydmljZXMucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/SyncfusionForm1/SyncfusionForm1.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3luY2Z1c2lvbkZvcm0xXFN5bmNmdXNpb25Gb3JtMS5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/WebBrowser/WebBrowser.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2ViQnJvd3NlclxXZWJCcm93c2VyLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/_Imports.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Pages/PdfViewer/PdfViewer.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGRmVmlld2VyXFBkZlZpZXdlci5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-bkg4gsf0hr
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-r0zbom6ac7
+
+[C:/Users/Tonja/Downloads/wetransfer_mauiblazorapp1_2023-01-11_1517/MauiBlazorApp1/MauiBlazorApp1/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-h6b4iehxkt

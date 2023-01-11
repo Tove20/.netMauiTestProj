@@ -1,0 +1,65 @@
+﻿
+<script type="text/javascript">
+    var clicked = 0;
+    function buttonClicked() {
+        clicked++;
+
+        document.getElementById("lblClickInfo").innerText = "You clicked " + clicked.toString() + " times!";
+    }
+
+</script>
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body class="backgroundCustom">
+   
+    <br />
+    <button type="button" onclick="buttonClicked();">Click me</button>
+    <br />
+    <label id="lblClickInfo">abc</label>
+    <p class="test">a</p>
+    <p class="test">a</p>
+    <p class="test">a</p>
+    <p class="test">a</p>
+    <p class="test">a</p>
+    <p class="test">a</p>
+    <p class="test">a</p>
+    <p class="test">a</p>
+    <p class="test">a</p>
+    <p class="test">a</p>
+    <p class="test">a</p>
+    <p class="test">a</p>
+    <p class="test">a</p>
+</body>
+</html>
+
+
+
+<style>
+    .backgroundCustom {
+        background-color: lightcyan;
+        /*background-color: yellow;*/
+        padding-left: 200px;
+        overflow: scroll;
+    }
+
+    .test{
+        margin-top: 3rem;
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .backgroundCustom::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .backgroundCustom {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+</style>

@@ -1,0 +1,97 @@
+﻿@page "/services"
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.SplitButtons
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Navigations
+@using MauiBlazorApp1.Pages.Services;
+@inject IJSRuntime JsRuntime
+
+<h3>Item 1</h3>
+
+<SfButtonGroup CssClass="e-btn-group">
+	<ButtonGroupButton CssClass="sf-outline-button">Yes</ButtonGroupButton>
+	<ButtonGroupButton CssClass="sf-outline-button">No</ButtonGroupButton>
+	<ButtonGroupButton CssClass="sf-outline-button">N/A</ButtonGroupButton>
+</SfButtonGroup>
+
+<br/>
+<hr/>
+<wrapper>
+<div id="comment">
+    <span class="material-icons md-24">chat</span>
+        <span id="Comments">
+            <Syncfusion.Blazor.Inputs.SfTextBox Multiline="true" CssClass="resizeboxSf" Placeholder="Comment"
+                                                FloatLabelType="Syncfusion.Blazor.Inputs.FloatLabelType.Auto"  /> @*Created="@onComment1Created"  @ref="upload"*@
+
+    </span>
+        <textbox>
+     <span class="material-icons md-24">chat</span>
+        <span >
+       
+                <Syncfusion.Blazor.Inputs.SfTextBox Multiline="true" Placeholder='Comment2' CssClass="resizeboxSf2"
+              FloatLabelType="Syncfusion.Blazor.Inputs.FloatLabelType.Auto" />
+          
+        </span>
+        </textbox>
+</div>
+</wrapper>
+<br />
+<br />
+<div>
+  
+<label for="checked">Finished</label>
+
+<SfSwitch CssClass="e-switch-wrapper" Checked="true" OnLabel="Active" OffLabel="Inactive"></SfSwitch>
+</div>
+<label for="checked">Mark checklist item as "finished"</label>
+
+
+
+<SfButton CssClass="e-round" IconCss="e-icons e-plus-icon" IsPrimary="true"></SfButton>
+
+
+
+@code {
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {  
+        await base.OnInitializedAsync();
+        MainPage.hideWebBrowserFunction();
+    } 
+   
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+        var targetUrl = "./scripts/resizeText.js";
+        await JSRuntime.InvokeVoidAsync("loadJs", targetUrl);
+  
+    }
+
+
+    private bool Visibility { get; set; } = false;
+    private bool ShowButton { get; set; } = true;
+
+    private void btnYes()
+    {
+        this.Visibility = true;
+    }
+    private void btnNo()
+    {
+        this.Visibility = true;
+    }
+    private void btnNA()
+    {
+        this.Visibility = true;
+    }
+
+
+    private void AddAtachment()
+    {
+        this.Visibility = true;
+    }
+
+}     

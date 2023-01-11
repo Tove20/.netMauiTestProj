@@ -1,0 +1,23 @@
+﻿@import "../../Styles/app.css";
+
+
+.custom.e-contextmenu-container .e-menu-item {
+    font-size: 10px;
+    font-style: oblique;
+    height: 3rem !important;
+}
+
+.e-contextmenu-wrapper ul .e-menu-item .e-menu-icon, .e-contextmenu-container ul .e-menu-item .e-menu-icon {
+    color: #A2001D;
+}
+
+.e-menu-item .e-blankicon {
+    width: 100% !important;
+    border-bottom: 1px solid #0000001F;
+    position: absolute;
+}
+
+
+
+
+

@@ -1,0 +1,105 @@
+﻿@page "/files"
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Buttons
+@using MauiBlazorApp1.Pages.Files
+
+
+  <div class="top-files-navbar">
+    <NavLink  href="files">
+       <p id="top-files-bar-text" class="listTaskBased">Task Based</p>
+    </NavLink>
+    <NavLink  href="blank">
+       <p id="top-files-bar-text" class="filesList">List</p>
+    </NavLink>
+ </div>
+<br/>
+<SfRadioButton Label="Disable" TChecked="string" Name="options" @bind-Checked="stringChecked" Value="Yes" ValueChange="@((args)=>OnChange(args,"Yes"))"></SfRadioButton>
+<SfRadioButton Label="Enable" TChecked="string" Name="options" @bind-Checked="stringChecked" Value="No" ValueChange="@((args)=>OnChange(args,"No"))"></SfRadioButton>
+<br/>
+<SfButton IconCss="e-icons e-close" IsPrimary="true" @onclick="OnItemCloseClick"></SfButton>
+@*<SfButton OnClick="Hide" CssClass="e-primary" Content="Hide"></SfButton>*@
+<span> The selected row index is : @SelectedValue </span>
+<SfGrid @ref="@Grid" DataSource="@Orders" @attributes="@GridAttributes" AllowSelection="true">
+    <GridSelectionSettings CheckboxMode="CheckboxSelectionType.ResetOnRowClick" EnableToggle="true"></GridSelectionSettings>
+    <GridEvents RowSelected="GetSelectedRecords" TValue="Order" OnRecordClick="OnItemClick" ></GridEvents>
+
+    <GridEditSettings AllowDeleting="true"></GridEditSettings>
+    <GridColumns>
+        <GridColumn Visible="@ShowItem" Type="ColumnType.CheckBox" Width="50"></GridColumn>
+        @foreach (var prop in typeof(Order).GetProperties())
+        {
+            <GridColumn Field="@prop.Name" IsPrimaryKey="@(prop.Name == "")" ></GridColumn>
+        }
+    </GridColumns>
+</SfGrid>
+
+<br/>
+
+<SfButton id="IconRoundButton" IconCss="e-icons e-plus-icon" Content="Show dropdown" IconPosition="IconPosition.Left"></SfButton>
+@code {
+    private string stringChecked = "No";
+    SfGrid<Order> Grid;
+    public List<double> SelectedRowIndexes { get; set; }
+    public double[] TotalValue { get; set; }
+    public string SelectedValue;
+    public void OnChange(ChangeArgs<string> Args, string val)
+    {
+        if (val == "Yes")
+        {
+            GridAttributes["disable"] = "yes";
+        }
+        else if (val == "No")
+        {
+            GridAttributes["disable"] = "no";
+        }
+    }
+
+    private Dictionary<string, object> GridAttributes { get; set; } = new Dictionary<string, object>();
+    public List<Order> Orders { get; set; }
+    //public List<Order> OrderData = new List<Order>
+    //{
+
+    //    new Order() { OrderID = 10248, CustomerID = "VINET", EmployeeID = 4 },
+    //    new Order() { OrderID = 10249, CustomerID = "TOMSP", EmployeeID = 5 },
+    //    new Order() { OrderID = 10250, CustomerID = "HANAR", EmployeeID = 6 }
+    //};
+    protected override void OnInitialized()
+    {
+        MainPage.hideWebBrowserFunction();
+   
+        GridAttributes.Add("disable", "no");
+        Orders = Enumerable.Range(1, 10).Select(x => new Order()
+            {
+                OrderID = 10 + x,
+                CustomerID = (new string[] { "ALFKI", "ANANTR", "ANTON", "BLONP", "BOLID" })[new Random().Next(5)]
+
+            }).ToList();
+    }
+
+    public async Task GetSelectedRecords(RowSelectEventArgs<Order> args)
+    {
+        SelectedRowIndexes = await this.Grid.GetSelectedRowIndexes();
+        TotalValue = SelectedRowIndexes.ToArray();
+        SelectedValue = "";
+        foreach (var data in TotalValue)
+        {
+            SelectedValue = SelectedValue + " " + data;
+        }
+        StateHasChanged();
+    }
+    public class Order
+    {
+        public int? OrderID { get; set; }
+        public string CustomerID { get; set; }
+
+    }
+    public bool ShowItem = false;
+    void OnItemClick()
+    {
+        ShowItem = true;
+    }
+    void OnItemCloseClick()
+    {
+        ShowItem = false;
+    }
+}

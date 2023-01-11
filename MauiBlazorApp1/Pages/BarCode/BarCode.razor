@@ -1,0 +1,35 @@
+﻿@page "/barcode"
+@using MauiBlazorApp1.Pages.BarCode
+
+<h1>BarCode</h1>
+
+
+<button class="btn btn-primary" @onclick="OpenBar">Open modal dialog</button>
+
+
+@code {
+
+	  protected override async Task OnInitializedAsync()
+      {
+		  MainPage.hideWebBrowserFunction();
+
+        }
+
+	private async void OpenBar()
+	{	
+		var page = App.GetCurrentPage();
+		var objPage = new NativePages.BarScanner();
+		try
+		{
+			await page.Navigation.PushModalAsync(objPage);
+		}
+		catch (Exception ex)
+		{
+			System.Diagnostics.Debug.Fail(ex.Message);
+		}
+
+
+	}
+
+	
+}

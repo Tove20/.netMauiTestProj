@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+	<title>MauiBlazorApp1</title>
+	<base href="/" />
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+	<link href="css/app.min.css" rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"></script>
+	<script src="MainAppScript.js" type="text/javascript"></script>
+	<script src="Script1Test.js" type="text/javascript"></script>
+	<script src="scripts/ChangeIColorScript.js" type="text/javascript"></script>
+	<script src="scripts/BottomSheetScript.js" type="text/javascript"></script>
+	<script src="scripts/LongPressScript.js" type="text/javascript"></script>
+	<script src="scripts\resizeText.js"></script>
+	<!--**** load in counter page ****-->
+	<!--<script src="Script2Test.js" type="text/javascript"></script>-->
+
+	<link href="MauiBlazorApp1.styles.css" rel="stylesheet" />
+	<!--<link href="_content/Syncfusion.Blazor.Themes/bootstrap5.css" rel="stylesheet" />-->
+	<link href="_content/Syncfusion.Blazor.Themes/material.css" rel="stylesheet" />
+	<script src="_content/Syncfusion.Blazor.PdfViewer/scripts/syncfusion-blazor-pdfviewer.min.js"></script>
+	<script src="_content/Syncfusion.Blazor.Core/scripts/syncfusion-blazor.min.js" type="text/javascript"></script>
+	<link href="css/PhotoPageStyle.css" rel="stylesheet" />
+	<link href="css/PdfViewer.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="status-bar-safe-area"></div>
+
+	<div id="app">
+
+	</div>
+	<div id="blazor-error-ui">
+		An unhandled error has occurred.
+		<a href="" class="reload">Reload</a>
+		<a class="dismiss">🗙</a>
+	</div>
+
+	<script src="_framework/blazor.webview.js" autostart="false"></script>
+
+	<script>
+		window.getWindowDimensions = function () {
+			return {
+				width: window.innerWidth,
+				height: window.innerHeight
+			};
+		};
+	</script>
+</body>
+
+</html>

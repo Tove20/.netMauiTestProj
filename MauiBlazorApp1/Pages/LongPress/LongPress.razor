@@ -1,0 +1,108 @@
+﻿@page "/longpress"
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Lists
+@using MauiBlazorApp1.Pages.LongPress
+<h3>LongPress</h3>
+
+
+
+@*with selection*@
+<div class="new-item" @onmousedown=MouseDown
+     @onmouseup=MouseUp >
+        <div class="with-trailling-icon lists-container">
+        <p class="subtitle-high-emphasis">Subtitle 1 / High Emphasis></p>
+        <div id="change-item" hidden="@IsShow">
+        <SfCheckBox @bind-Checked="@isChecked[0]"  ></SfCheckBox>
+        </div>
+        <span class="oi oi-menu" id="change-item" hidden="@IsNotShow"> </span>
+    </div>
+</div>
+<div class="new-item" @onmousedown=MouseDown
+     @onmouseup=MouseUp >
+        <div class="with-trailling-icon lists-container">
+        <p class="subtitle-high-emphasis">Subtitle 1 / High Emphasis></p>
+        <div id="change-item" hidden="@IsShow">
+        <SfCheckBox @bind-Checked="@isChecked[1]"  ></SfCheckBox>
+        </div>
+        <span class="oi oi-menu" id="change-item" hidden="@IsNotShow"> </span>
+    </div>
+</div>
+<div class="new-item" @onmousedown=MouseDown
+     @onmouseup=MouseUp>
+    <div class="with-trailling-icon lists-container">
+        <p class="subtitle-high-emphasis">Subtitle 1 / High Emphasis></p>
+        <div id="change-item" hidden="@IsShow">
+            <SfCheckBox @bind-Checked="@isChecked[2]"></SfCheckBox>
+        </div>
+        <span class="oi oi-menu" id="change-item" hidden="@IsNotShow"> </span>
+    </div>
+</div>
+
+<button class="btn btn-outline-primary" id="btnCounter" @onclick="CloseBulk">Close Bulk</button>
+@code{
+
+    public bool IsShow { get; set; } = true;
+    public bool IsNotShow { get; set; } = false;
+
+    DateTime mouseDownTme;
+    public void MouseDown()
+    {
+        mouseDownTme = DateTime.UtcNow;
+    }
+
+    public async void MouseUp(MouseEventArgs args)
+    {
+        if (args.Button == 2)
+        {
+            ShowCheckbox();
+            return;
+        }
+
+        long milliseconds = (DateTime.UtcNow.Ticks - mouseDownTme.Ticks) / TimeSpan.TicksPerMillisecond;
+        if (milliseconds > 400)
+        {
+            ShowCheckbox();
+        }
+
+    }
+
+    private void CloseBulk()
+    {
+        Array.Fill(isChecked, false);
+        HideCheckbox();
+    }
+
+    private void ShowCheckbox()
+    {
+
+        IsShow = false;
+        IsNotShow = true;
+    }
+
+
+    private void HideCheckbox()
+    {
+
+        IsShow = true;
+        IsNotShow = false;
+    }
+
+    private bool[] isChecked = new bool[3];
+
+
+}
+
+<style>
+    .clickarea{
+        border: 1px solid black;
+    }
+
+
+    #change-item{
+        position : absolute;
+        margin-left: 23rem;
+        margin-top: 1rem;
+    }
+
+</style>

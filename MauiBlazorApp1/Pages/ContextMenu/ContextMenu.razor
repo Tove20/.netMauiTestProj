@@ -1,0 +1,28 @@
+﻿@using MauiBlazorApp1.Pages.ContextMenu
+@using Syncfusion.Blazor.Navigations
+@using Syncfusion.Blazor.Buttons
+
+@inject IJSRuntime JsRuntime
+@page "/contextmenu"
+
+<h3>ContextMenu</h3>
+
+
+
+<div id="target">
+    <SfContextMenu  @ref="contextMenuObj" TValue="MenuItem" CssClass="contex-menu-test">           
+        <MenuItems >
+            <MenuItem Id="bottom-sheet" style="border-bottom: 1px solid #0000001F" ></MenuItem>
+            <MenuItem IconCss="e-icons e-circle-info" Text="Details" Url="lists"></MenuItem>
+            <MenuItem IconCss="e-icons e-send-1" Text="Send Files" Disabled="true"></MenuItem>
+            <MenuItem IconCss="e-icons e-send-to-back" Text="Share" style="border-bottom: 1px solid #0000001F"></MenuItem>
+            <MenuItem IconCss="e-icons e-edit-5" Text="Edit File"></MenuItem>
+            <MenuItem IconCss="e-icons e-download-2" Text="Make available offline"></MenuItem>
+            <MenuItem IconCss="e-icons e-download" Text="Download" style="border-bottom: 1px solid #0000001F"></MenuItem>
+            <MenuItem IconCss="e-icons e-delete-3" Text="Delete" style="color: #A2001D"></MenuItem>
+        </MenuItems>
+        <MenuAnimationSettings Effect="MenuEffect.SlideDown" Duration="800"></MenuAnimationSettings>
+    </SfContextMenu>
+    <SfButton @onclick="OpenContextMenu">Open ContextMenu</SfButton>
+</div>
+

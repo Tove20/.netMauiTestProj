@@ -1,0 +1,562 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>MauiBlazorApp1</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<EnableDefaultCssItems>false</EnableDefaultCssItems>
+
+		<!-- Display name -->
+		<ApplicationTitle>MauiBlazorApp1</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.mauiblazorapp1</ApplicationId>
+		<ApplicationIdGuid>EBB4EEA9-39DC-4CDD-A69B-AE9001BD7DB2</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">30.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<Configurations>Debug;Release;DebugDEV;ReleaseDEV</Configurations>
+		<CodesignKey>iPhone Developer</CodesignKey>
+		<ProvisioningType>automatic</ProvisioningType>
+		<DefaultLanguage>en-GB</DefaultLanguage>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' AND '$(OS)' != 'Windows_NT'  ">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' AND '$(OS)' != 'Windows_NT'  ">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseDev|AnyCPU' AND '$(OS)' != 'Windows_NT' ">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestDEV.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoDEV.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoDEV.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugDEV|AnyCPU' AND '$(OS)' != 'Windows_NT' ">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestDEV.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoDEV.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoDEV.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	  <WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugDEV|AnyCPU' ">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestDEV.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoDEV.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoDEV.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	  <DebugSymbols>true</DebugSymbols>
+	  <Optimize>false</Optimize>
+	  <DefineConstants>TRACE;DEBUG;NET;NET6_0;NETCOREAPP</DefineConstants>
+	  <WarningLevel>4</WarningLevel>
+	  <DocumentationFile>bin\Debug\net6.0-android\MauiBlazorApp1.xml</DocumentationFile>
+	  <IntermediateOutputPath>obj\Debug\net6.0-android</IntermediateOutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-maccatalyst|AnyCPU'">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-maccatalyst|AnyCPU'">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	  <CodesignProvision>VS: WildCard Development 2021</CodesignProvision>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='DebugDEV|net6.0-android|AnyCPU'">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestDEV.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoDEV.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoDEV.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='DebugDEV|net6.0-ios|AnyCPU'">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestDEV.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoDEV.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoDEV.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	  <_BundlerDebug>true</_BundlerDebug>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='DebugDEV|net6.0-maccatalyst|AnyCPU'">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestDEV.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoDEV.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoDEV.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	  <DeviceSpecificBuild>true</DeviceSpecificBuild>
+	  <_BundlerDebug>true</_BundlerDebug>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseDEV|AnyCPU' ">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	  <IntermediateOutputPath>obj\Release\net6.0-android</IntermediateOutputPath>
+	  <Optimize>true</Optimize>
+	  <DefineConstants>TRACE;RELEASE;NET;NET6_0;NETCOREAPP</DefineConstants>
+	  <DocumentationFile>bin\Release\net6.0-android\MauiBlazorApp1.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='ReleaseDEV|net6.0-android|AnyCPU'">
+	  <CustomCommands>
+	    <CustomCommands>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/Android/_ManifestFiles/AndroidManifestPROD.xml Platforms/Android/AndroidManifest.xml </command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/MacCatalyst/_ManifestFiles/InfoPROD.plist Platforms/MacCatalyst/Info.plist</command>
+	      </Command>
+	      <Command>
+	        <type>BeforeBuild</type>
+	        <command>cp -R Platforms/iOS/_ManifestFiles/InfoPROD.plist Platforms/iOS/Info.plist</command>
+	      </Command>
+	    </CustomCommands>
+	  </CustomCommands>
+	  <AndroidManagedSymbols>true</AndroidManagedSymbols>
+	  <AndroidPackageFormat>aab</AndroidPackageFormat>
+	  <AotAssemblies>true</AotAssemblies>
+	  <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#FFFFFF" />
+
+		<!-- Splash Screen -->
+	
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	
+</ItemGroup>
+	<ItemGroup>
+	  <AndroidResource Remove="NativePages\NewFolder\**" />
+	  <Compile Remove="NativePages\NewFolder\**" />
+	  <Content Remove="NativePages\NewFolder\**" />
+	  <EmbeddedResource Remove="NativePages\NewFolder\**" />
+	  <MauiXaml Remove="NativePages\NewFolder\**" />
+	  <None Remove="NativePages\NewFolder\**" />
+	  <TypeScriptCompile Remove="NativePages\NewFolder\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Pages\BarsAndText - Copy.razor.css" />
+	  <None Remove="Pages\BarsAndText.razor.css" />
+	  <None Remove="Pages\BarsAndText\BarsAndText.scss" />
+	  <None Remove="Platforms\Windows\_ManifestFiles\PackageDEV.appxmanifest" />
+	  <None Remove="Platforms\Windows\_ManifestFiles\PackagePROD.appxmanifest" />
+	  <None Remove="Platforms\iOS\Renderers\" />
+	  <None Remove="Platforms\MacCatalyst\Renderers\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Remove="compilerconfig.json" />
+	  <Content Remove="wwwroot\intactsplash.png" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	  <Content Remove="wwwroot\Script2Test.js.map" />
+	  <Content Remove="wwwroot\Script2Test.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Pages\BarsAndText\BarsAndText.scss" />
+	  <Content Include="Pages\PhotoPage\PhotoPageStyle.scss" />
+	  <MauiAsset Include="Raw\indexOldMain.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="compilerconfig.json" />
+	  <None Include="wwwroot\MainAppScript.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="IdentityModel.OidcClient" Version="5.0.2" />
+	  <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0-preview.6.22324.4" />
+	  <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.8.0-beta">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Syncfusion.Blazor.Buttons" Version="20.2.0.43" />
+	  <PackageReference Include="Syncfusion.Blazor.Calendars" Version="20.2.0.43" />
+	  <PackageReference Include="Syncfusion.Blazor.DropDowns" Version="20.2.0.43" />
+	  <PackageReference Include="Syncfusion.Blazor.Grid" Version="20.2.0.43" />
+	  <PackageReference Include="Syncfusion.Blazor.Inputs" Version="20.2.0.43" />
+	  <PackageReference Include="Syncfusion.Blazor.Lists" Version="20.2.0.43" />
+	  <PackageReference Include="Syncfusion.Blazor.Navigations" Version="20.2.0.43" />
+	  <PackageReference Include="Syncfusion.Blazor.PdfViewerServer.Windows" Version="20.2.0.43" />
+	  <PackageReference Include="Syncfusion.Blazor.Popups" Version="20.2.0.43" />
+	  <PackageReference Include="Syncfusion.Blazor.Themes" Version="20.2.0.43" />
+	
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="NativePages\ImagePage.xaml.cs">
+	    <DependentUpon>ImagePage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="NativePages\ErrorMessagePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\InfoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\ImagePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\OpenIdSample.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\QrCodeReader.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\SwipePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\SwipePages\SwipePage - Copy.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\SwipePages\SwipePage2.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NativePages\SwipePages\SwipePage3.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Resources\Splash\intactsplash.svg" Color="#FFFFFF" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Platforms\Windows\_ManifestFiles\" />
+	  <Folder Include="wwwroot\fonts\" />
+	  <Folder Include="Platforms\iOS\Renderers\" />
+	  <Folder Include="Platforms\MacCatalyst\Renderers\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="wwwroot\data\TestPDF1.pdf">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="$([MSBuild]::IsOSPlatform('windows'))">
+	  <Exec Command="if $(ConfigurationName) ==  Debug (&#xD;&#xA;copy $(projectdir)\Platforms\Android\_ManifestFiles\AndroidManifestPROD.xml $(projectdir)\Platforms\Android\AndroidManifest.xml /Y&#xD;&#xA;copy $(projectdir)\Platforms\Windows\_ManifestFiles\PackagePROD.appxmanifest $(projectdir)\Platforms\Windows\Package.appxmanifest /Y&#xD;&#xA;&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;if $(ConfigurationName) ==  Release (&#xD;&#xA;copy $(projectdir)\Platforms\Android\_ManifestFiles\AndroidManifestPROD.xml $(projectdir)\Platforms\Android\AndroidManifest.xml /Y&#xD;&#xA;copy $(projectdir)\Platforms\Windows\_ManifestFiles\PackagePROD.appxmanifest $(projectdir)\Platforms\Windows\Package.appxmanifest /Y&#xD;&#xA;&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;if $(ConfigurationName) ==  ReleaseDEV (&#xD;&#xA;copy $(projectdir)\Platforms\Android\_ManifestFiles\AndroidManifestDEV.xml $(projectdir)\Platforms\Android\AndroidManifest.xml /Y&#xD;&#xA;copy $(projectdir)\Platforms\Windows\_ManifestFiles\PackageDEV.appxmanifest $(projectdir)\Platforms\Windows\Package.appxmanifest /Y&#xD;&#xA;&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;if $(ConfigurationName) ==  DebugDEV (&#xD;&#xA;copy $(projectdir)\Platforms\Android\_ManifestFiles\AndroidManifestDEV.xml $(projectdir)\Platforms\Android\AndroidManifest.xml /Y&#xD;&#xA;copy $(projectdir)\Platforms\Windows\_ManifestFiles\PackageDEV.appxmanifest $(projectdir)\Platforms\Windows\Package.appxmanifest /Y&#xD;&#xA;&#xD;&#xA;)" />
+	</Target>
+
+
+
+</Project>

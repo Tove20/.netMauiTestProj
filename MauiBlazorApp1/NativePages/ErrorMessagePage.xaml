@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ECertMobile.NativePages.ErrorMessagePage"
+            >
+    <ContentPage.Content>
+        <Frame CornerRadius="2.5"  
+               BackgroundColor="White" VerticalOptions="Center"  HorizontalOptions="FillAndExpand"
+               WidthRequest="300" HeightRequest="500">
+
+            <StackLayout >
+                <StackLayout HorizontalOptions="Start" HeightRequest="25" Padding="10">
+                    <Label x:Name="lblTitle"
+                            Text="Error"
+                            HorizontalOptions="CenterAndExpand"
+                            HorizontalTextAlignment="Center"
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            />
+                    </StackLayout>
+                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="LightGray"/>
+
+                <StackLayout HorizontalOptions="Start" VerticalOptions="FillAndExpand" HeightRequest="100" Padding="10">
+                    <Label x:Name="lblMessage"
+                            Text="Error message here"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center" 
+                            FontSize="Small"/>
+                </StackLayout>
+
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="LightGray"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End" HeightRequest="50" Padding="10">
+                    <Button x:Name="btnCancel" Text="GOT IT" BorderWidth="0" BackgroundColor="Transparent"
+                            TextColor="#306176" FontSize="Small" FontAttributes="Bold"/>
+                </StackLayout>
+                    </StackLayout>
+
+            </Frame>
+    </ContentPage.Content>
+</ContentPage>

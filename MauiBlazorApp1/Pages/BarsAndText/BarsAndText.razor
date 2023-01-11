@@ -1,0 +1,114 @@
+﻿@page "/barsandtext"
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Calendars
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.DropDowns
+@using MauiBlazorApp1.Pages.BarsAndText
+
+
+<div class="container-section">
+    <p> Title Bar Controls </p>
+
+    <button class="btn btn-primary" id="btnCounter" @onclick="ShowPrimaryColor">Primary Color</button>
+
+    <button class="btn btn-secondary" id="btnCounter" @onclick="ShowSecondaryColor">Secondary Color</button>
+
+    <button class="btn btn-dark" id="btnCounter" @onclick="ShowDesaturatedColor">Desaturated Color</button>
+
+    <button class="btn btn-danger" id="btnCounter" @onclick="ShowErrorColor">Error Color</button>
+
+    <button class="btn btn-success" id="btnCounter" @onclick="ShowSuccessColor">Success Color</button>
+
+    <button class="btn btn-info" id="btnCounter" @onclick="ShowInfoColor">Info Color</button>
+
+    <button class="btn btn-warning" id="btnCounter" @onclick="ShowWarningColor">Warning Color</button>
+
+    <button class="btn btn-outline-primary" id="btnCounter" @onclick="AddSearchFieldToBar">Add Search Bar</button>
+
+    <button class="btn btn-outline-primary" id="btnCounter" @onclick="DeleteSearchFieldToBar">Delete Search Bar</button>
+
+    <button class="btn btn-outline-primary" id="btnCounter" @onclick="ShowSecondaryBar">Show Secondary Bar</button>
+
+    <button class="btn btn-outline-primary" id="btnCounter" @onclick="HideSecondaryBar">Hide Secondary Bar</button>
+</div>
+
+
+
+<div class="container-section">
+    <p> Text Controls </p>
+
+    <div class="container-section">
+    <button class="btn btn-primary" id="btnCounter" @onclick="HideText">Show and Hide</button>
+    @if (!isVisible)
+    {
+        <label> Hide me </label>
+    }
+    </div>
+
+    <div class="container-section">
+    <button class="btn btn-primary" id="btnCounter" @onclick="EnableText">Enable and Disable</button>
+    <label disabled=@(IsDisabled) > Disable me </label>
+    </div>
+  
+      <div class="container-section">
+        <button class="btn btn-primary" id="btnCounter" @onclick="ChangeColor">Change Color</button>
+        <label style="color:@color"> Color me </label>
+    </div>
+
+      <div class="container-section">
+        <button class="btn btn-primary" id="btnCounter" @onclick="ChangeStyle">Change Style</button>
+        <label style="@font"> Style me </label>
+    </div>
+ 
+   
+</div>
+
+<div class="container-section">
+    <p> Dropdown </p>
+    @if (!isDropDownVisible)
+    {
+        <div class="container-section">
+            <div class="oi oi-list-rich" style="color: #535353"></div>
+            <SfDropDownList TValue="string" TItem="DevelopmentSkills" PopupHeight="350px" PopupWidth="350px" Placeholder="Select a skill" DataSource="@Skills" Enabled=@(IsDisabled)>
+                <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+            </SfDropDownList>
+        </div>
+        <div class="container-section">
+            <SfMultiSelect TValue="string[]" TItem="DevelopmentSkills" Placeholder="Select a skill" Mode="VisualMode.CheckBox" DataSource="@Skills" ShowClearButton="true" FilterBarPlaceholder="Search sports" PopupHeight="350px" PopupWidth="350px" @bind-Value="@MultiVal" Enabled=@(IsDisabled)>
+            <MultiSelectFieldSettings Value="ID" Text="Text"></MultiSelectFieldSettings>
+        </SfMultiSelect>
+        </div>
+    }
+    <div class="container-section">
+    <button class="btn btn-primary" id="btnCounter" @onclick="EnableText">Enable and Disable</button>
+    <button class="btn btn-primary" id="btnCounter" @onclick="ShowHideDropdown">Show Hide</button>
+        <div class="container-section">
+        <input type="text" @bind="@newDropDownItem" @oninput="@((e) => { newDropDownItem=(string)e.Value;})" />
+        <button class="btn btn-primary" id="btnCounter" @onclick="addItemToDropDown">AddToList</button>
+        </div>
+    </div>
+
+ 
+    <br/>
+ </div>
+ <div class="container-section-datetime">
+<label class="example-label">Select Date and Time: </label>
+
+   <br/>
+
+    <div class="oi oi-list-rich" style="color: #535353"></div>
+    <SfDatePicker TValue="DateTime?" @bind-Value="@SelectedDate"  ShowClearButton="true" Format="@format" Focus="FocusHandler"></SfDatePicker>
+
+    <button class="btn btn-primary" id="btnCounter" @onclick="changeFormat">Change formate</button>
+
+    <div class="oi oi-list-rich" style="color: #535353"></div>
+    <SfTimePicker TValue="DateTime?"  @bind-Value="@SelectedTime" ShowClearButton="true"></SfTimePicker>
+
+    <button @onclick="@UpdateValue">Update Value</button>
+</div>
+
+<label class="example-label">@DateTime </label>
+
+<TimePicker Value="@time"></TimePicker>

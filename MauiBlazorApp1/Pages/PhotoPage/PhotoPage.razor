@@ -1,0 +1,18 @@
+﻿@page "/photo"
+@inject NavigationManager UriHelper
+@inject IJSRuntime JSRuntime
+@using MauiBlazorApp1.Pages.PhotoPage
+
+<h3>PhotoPage</h3>
+
+<button class="btn btn-primary" id="btnCamera" @onclick="TakePhoto">Take Photo !</button>
+<button class="btn btn-primary" id="btnUploadImage" @onclick="PickAndShow">Upload Image !</button>
+<button class="btn btn-primary" id="btnLoadAll" @onclick="loadAllImages">load Images !</button>
+
+@foreach (var item in imageSource)
+{
+    <div id="imageContainer">
+        <img src="@item.Key" id="thumbnail" @onclick="() => navigateToImagePage(item.Value)" />
+    </div>
+}
+
